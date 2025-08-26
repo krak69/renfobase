@@ -1,55 +1,44 @@
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Home() {
   return (
     <div className="grid gap-10">
-      {/* HERO */}
-      <section className="card relative overflow-hidden p-8 md:p-12">
-        <div className="absolute inset-0 -z-10 opacity-40">
-          {/* léger décor, sans dépendance */}
-          <svg viewBox="0 0 600 600" className="w-full h-full">
-            <defs>
-              <radialGradient id="g" cx="50%" cy="50%" r="75%">
-                <stop offset="0%" stopColor="white" stopOpacity="0.25" />
-                <stop offset="100%" stopColor="white" stopOpacity="0" />
-              </radialGradient>
-            </defs>
-            <rect width="600" height="600" fill="url(#g)" />
-          </svg>
-        </div>
+      {/* HERO plein écran */}
+      <section className="relative w-screen left-1/2 right-1/2 -ml-[50vw] -mr-[50vw]">
+        <div className="relative h-[360px] md:h-[520px]">
+          {/* Background image full width */}
+          <Image
+            src="/images/renfobase-hero.webp"
+            alt="Athlète en tenue de renforcement — RenfoBase"
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover object-center"
+          />
+          {/* Overlay pour lisibilité */}
+          <div className="absolute inset-0 bg-black/30" />
+          {/* Contenu hero (centré) */}
+          <div className="relative container h-full flex items-center">
+            <div className="max-w-3xl">
+              <h1 className="text-3xl md:text-4xl font-bold leading-tight mb-3">
+                RenfoBase — planifie, exécute et suis tes séances de renforcement
+              </h1>
+              <p className="opacity-95 text-base md:text-lg mb-6">
+                Conçois tes <strong>exercices</strong>, groupe-les en <strong>circuits</strong>,
+                programme tes <strong>séances</strong> et déroule-les pas à pas
+                (timers automatiques, repos, validation). Simple, rapide, efficace.
+              </p>
 
-        <div className="max-w-3xl">
-          <h1 className="text-3xl md:text-4xl font-bold leading-tight mb-3">
-            RenfoBase — planifie, exécute et suis tes séances de renforcement
-          </h1>
-          <p className="opacity-90 text-base md:text-lg mb-6">
-            Conçois tes <strong>exercices</strong>, groupe-les en <strong>circuits</strong>, programme tes{" "}
-            <strong>séances</strong> et déroule-les pas à pas (timers automatiques, repos, validation).
-            Simple, rapide, efficace.
-          </p>
-
-          <div className="flex flex-wrap gap-3 mb-6">
-            <span className="text-sm opacity-90 inline-flex items-center gap-2 px-3 py-2 rounded-lg border border-white/15 bg-white/5">
-              ✅ Bibliothèque d’exercices
-            </span>
-            <span className="text-sm opacity-90 inline-flex items-center gap-2 px-3 py-2 rounded-lg border border-white/15 bg-white/5">
-              ✅ Circuits réutilisables
-            </span>
-            <span className="text-sm opacity-90 inline-flex items-center gap-2 px-3 py-2 rounded-lg border border-white/15 bg-white/5">
-              ✅ Séances programmées & suivi
-            </span>
-            <span className="text-sm opacity-90 inline-flex items-center gap-2 px-3 py-2 rounded-lg border border-white/15 bg-white/5">
-              ✅ Timers & validation de fin
-            </span>
-          </div>
-
-        <div className="flex flex-wrap gap-3">
-            <Link href="/exercices" className="btn text-base">
-              Voir les exercices
-            </Link>
-            <Link href="/seances" className="btn text-base">
-              Voir les séances
-            </Link>
+              <div className="flex flex-wrap gap-3">
+                <Link href="/exercices" className="btn text-base bg-white/10 hover:bg-white/20">
+                  Voir les exercices
+                </Link>
+                <Link href="/seances" className="btn text-base bg-white/10 hover:bg-white/20">
+                  Voir les séances
+                </Link>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -66,7 +55,7 @@ export default function Home() {
         <div className="card">
           <h2 className="text-xl font-semibold mb-2">2) Compose des circuits</h2>
           <p className="opacity-85">
-            Assemble plusieurs exercices, règle l’ordre et les paramètres (répétitions, secondes). 
+            Assemble plusieurs exercices, règle l’ordre et les paramètres (répétitions, secondes).
             Les circuits sont réutilisables dans toutes tes séances.
           </p>
         </div>
@@ -84,7 +73,7 @@ export default function Home() {
         <div className="card">
           <h3 className="text-lg font-semibold mb-2">Accéder aux exercices</h3>
           <p className="opacity-85 mb-4">
-            Parcours ta bibliothèque, recherche par nom, pagine par 10/20/50. 
+            Parcours ta bibliothèque, recherche par nom, pagine par 10/20/50.
             Ajoute progressivement tes mouvements.
           </p>
           <Link href="/exercices" className="btn">Aller aux exercices</Link>
