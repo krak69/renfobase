@@ -1,3 +1,6 @@
+export const dynamic = 'force-dynamic';
+export const revalidate = 0;
+
 import { getSupabaseServer } from "@/lib/supabaseServer";
 import type { Session } from "@/lib/types";
 import Link from "next/link";

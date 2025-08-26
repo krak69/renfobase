@@ -116,3 +116,10 @@ insert into public.exercises (name, description, type) values
 - Auth Supabase (email magic link) + ownership de contenu
 - Thumbnails et upload (Storage Supabase)
 - Améliorations UI (shadcn/ui, toasts, modales)
+
+
+---
+
+## Note de compatibilité ESLint (Vercel)
+Si vous avez une erreur `ERESOLVE` liée à `eslint`, restez sur **eslint 8.57.0** avec **eslint-config-next 14.2.5** (inclus ici).  
+Vercel utilisera **Node 20** (via `engines` et `.nvmrc`).
