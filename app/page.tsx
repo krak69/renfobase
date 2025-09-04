@@ -25,7 +25,7 @@ export default function Home() {
                 RenfoBase — planifie, exécute et suis tes séances de renforcement
               </h1>
               <p className="opacity-95 text-base md:text-lg mb-6">
-                Conçois tes <strong>exercices</strong>, groupe-les en <strong>circuits</strong>,
+                Conçois tes <strong>programmes</strong>de <strong>renforcement musculaire</strong>,
                 programme tes <strong>séances</strong> et déroule-les pas à pas
                 (timers automatiques, repos, validation). Simple, rapide, efficace.
               </p>
@@ -53,10 +53,9 @@ export default function Home() {
           </p>
         </div>
         <div className="card">
-          <h2 className="text-xl font-semibold mb-2">2) Compose des circuits</h2>
+          <h2 className="text-xl font-semibold mb-2">2) Compose tes séances</h2>
           <p className="opacity-85">
             Assemble plusieurs exercices, règle l’ordre et les paramètres (répétitions, secondes).
-            Les circuits sont réutilisables dans toutes tes séances.
           </p>
         </div>
         <div className="card">
